@@ -1,4 +1,4 @@
-package com.example.mqtt_subscriber.data
+package com.example.mqtt_subscriber.model
 
 sealed class UiState<out T>  {
     data class Success<out T>(val data: T? = null) : UiState<T>()

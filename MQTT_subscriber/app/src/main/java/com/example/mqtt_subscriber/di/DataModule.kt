@@ -1,4 +1,4 @@
-package com.example.mqtt_subscriber.di.DataModel
+package com.example.mqtt_subscriber.di
 
 import android.content.Context
 import androidx.room.Room

@@ -1,16 +1,13 @@
-package com.example.mqtt_subscriber.model.repository
+package com.example.mqtt_subscriber.domain
 
-import android.util.Log
-import android.widget.Toast
-import com.example.mqtt_subscriber.utils.constant
-import com.example.mqtt_subscriber.utils.constant.TAG
-import com.example.mqtt_subscriber.utils.constant.serverUri
-import org.eclipse.paho.android.service.MqttAndroidClient
-import org.eclipse.paho.client.mqttv3.IMqttActionListener
-import org.eclipse.paho.client.mqttv3.IMqttToken
+import androidx.lifecycle.LiveData
+import com.example.mqtt_subscriber.model.entity.Co2
+import kotlinx.coroutines.flow.Flow
 
 interface MqttRepository {
-    fun connect(mqttAndroidClient : MqttAndroidClient, clientId: String)
+    suspend fun insert(co2: Co2)
 
-    fun setSubscrition(mqttAndroidClient : MqttAndroidClient)
+    suspend fun getAllCo2(): Flow<List<Co2>>
+
+    suspend fun delete(co2: Co2)
 }
